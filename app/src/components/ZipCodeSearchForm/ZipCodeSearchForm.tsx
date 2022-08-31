@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { ButtonStyled } from '../styled/Form.styled';
+import { ButtonStyled as Button } from '../styled/Form.styled';
 import SelectCountry from './SelectCountry';
 import ZipCodeInput from './ZipCodeInput';
 
@@ -60,11 +60,11 @@ const ZipCodeSearchForm = ({
         />
         <ZipCodeInput postCode={postCode} onChange={handlePostCodeChange} />
         <div className="bt">
-          <ButtonStyled
+          <Button
             type="submit"
             disabled={!postCode || postCode === searchedPostCode}>
             Search
-          </ButtonStyled>
+          </Button>
         </div>
       </Container>
     </form>

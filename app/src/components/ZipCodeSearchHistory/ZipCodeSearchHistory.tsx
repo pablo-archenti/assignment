@@ -1,5 +1,5 @@
-import { ButtonStyled } from '../styled/Form.styled';
-import { ContainerTitle } from '../styled/Container.styled';
+import { ButtonStyled as Button } from '../styled/Form.styled';
+import { Container, Title } from '../styled/Container.styled';
 
 type Props = {
   history: ZipCode[];
@@ -13,9 +13,9 @@ const ZipCodeSearchHistory = ({
   if (!history.length) return null;
 
   return (
-    <ContainerTitle>
+    <Container>
       <div>
-        <span className="title">Last searches:</span>
+        <Title>Last searches:</Title>
         <ul>
           {history.map(({ postCode, country, state, city }, index) => (
             <li key={index}>
@@ -26,11 +26,9 @@ const ZipCodeSearchHistory = ({
         </ul>
       </div>
       <div className="bt">
-        <ButtonStyled onClick={onClearHistory}>
-          Clear Search History
-        </ButtonStyled>
+        <Button onClick={onClearHistory}>Clear Search History</Button>
       </div>
-    </ContainerTitle>
+    </Container>
   );
 };
 

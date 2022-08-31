@@ -1,11 +1,4 @@
-import styled from 'styled-components';
-import { ContainerTitle } from '../styled/Container.styled';
-
-const Containter = styled(ContainerTitle)`
-  li {
-    margin: 5px;
-  }
-`;
+import { Container, Title, List } from '../styled/Container.styled';
 
 type Props = {
   zipCode: { city: string; state: string } | null | undefined;
@@ -21,13 +14,13 @@ const ZipCodeSearchResult = ({
   if (zipCode === null) return <div>Not Found!</div>;
 
   return (
-    <Containter>
-      <span className="title">Result:</span>
-      <ul>
+    <Container>
+      <Title>Result:</Title>
+      <List>
         <li>City: {zipCode.city}</li>
         <li>State: {zipCode.state}</li>
-      </ul>
-    </Containter>
+      </List>
+    </Container>
   );
 };
 

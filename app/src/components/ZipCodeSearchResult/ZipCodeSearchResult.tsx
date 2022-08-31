@@ -1,10 +1,7 @@
 import styled from 'styled-components';
+import { ContainerTitle } from '../styled/Container.styled';
 
-const Containter = styled.div`
-  margin: 15px;
-  .title {
-    font-weight: bold;
-  }
+const Containter = styled(ContainerTitle)`
   li {
     margin: 5px;
   }

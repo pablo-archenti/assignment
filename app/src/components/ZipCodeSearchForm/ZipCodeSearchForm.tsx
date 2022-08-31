@@ -5,12 +5,15 @@ import { ButtonStyled } from '../styled/Form.styled';
 import SelectCountry from './SelectCountry';
 import ZipCodeInput from './ZipCodeInput';
 
-const ZipCodeSearchFormContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 15px;
   min-height: 140px;
+  .bt {
+    text-align: right;
+  }
 `;
 
 type Props = {
@@ -48,7 +51,7 @@ const ZipCodeSearchForm = ({
 
   return (
     <form onSubmit={handleSearch}>
-      <ZipCodeSearchFormContainer>
+      <Container>
         <SelectCountry
           selected={countryCode}
           countries={countries}
@@ -56,12 +59,14 @@ const ZipCodeSearchForm = ({
           onSelect={handleCountrySelect}
         />
         <ZipCodeInput postCode={postCode} onChange={handlePostCodeChange} />
-        <ButtonStyled
-          type="submit"
-          disabled={!postCode || postCode === searchedPostCode}>
-          Search
-        </ButtonStyled>
-      </ZipCodeSearchFormContainer>
+        <div className="bt">
+          <ButtonStyled
+            type="submit"
+            disabled={!postCode || postCode === searchedPostCode}>
+            Search
+          </ButtonStyled>
+        </div>
+      </Container>
     </form>
   );
 };

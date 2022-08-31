@@ -1,12 +1,5 @@
-import styled from 'styled-components';
 import { ButtonStyled } from '../styled/Form.styled';
-
-const Container = styled.div`
-  margin: 15px;
-  .bt {
-    text-align: right;
-  }
-`;
+import { ContainerTitle } from '../styled/Container.styled';
 
 type Props = {
   history: ZipCode[];
@@ -20,7 +13,7 @@ const ZipCodeSearchHistory = ({
   if (!history.length) return null;
 
   return (
-    <Container>
+    <ContainerTitle>
       <div>
         <span className="title">Last searches:</span>
         <ul>
@@ -37,7 +30,7 @@ const ZipCodeSearchHistory = ({
           Clear Search History
         </ButtonStyled>
       </div>
-    </Container>
+    </ContainerTitle>
   );
 };
 
